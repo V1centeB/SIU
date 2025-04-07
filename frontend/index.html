@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LexiLoop</title>
+  <!-- Ruta relativa a 'index.html' -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Pantalla Principal -->
+<section id="pantalla-inicio" class="card pantalla-activa">
+  <h1 class="app-title">LexiLoop</h1>
+  <div class="button-group">
+    <button class="gray-button" onclick="mostrarPantalla('registro')">Register</button>
+    <button class="gray-button" onclick="mostrarPantalla('login')">Login</button>
+  </div>
+</section>
+
+<!-- Pantalla Login -->
+<section id="pantalla-login" class="card pantalla-oculta">
+  <h1 class="app-title">LexiLoop</h1>
+  <label class="label">Iniciar Sesión</label>
+  <input class="input" type="text" placeholder="User / Email" id="usuario">
+  <input class="input" type="password" placeholder="Password" id="password">
+  <button class="gray-button" onclick="iniciarSesion()">Entrar</button>
+</section>
+
+<!-- Pantalla tras login -->
+<section id="pantalla-app" class="card pantalla-oculta">
+  <img src="../assets/Logo.png" alt="LexiLoop Logo" class="logo-img">
+  <input class="input" type="text" placeholder="Añadir Vocabulario">
+  <input class="input" type="password" placeholder="Password">
+  <!-- Elemento para mostrar feedback -->
+  <div id="feedback" style="margin-top: 1rem; font-weight: bold;"></div>
+</section>
+
+<!-- Librería de Socket.IO (ruta por defecto) -->
+<script src="/socket.io/socket.io.js"></script>
+
+<!-- Rutas relativas para archivos en la misma carpeta 'frontend' -->
+<script src="cliente.js"></script>
+<script src="voice.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
