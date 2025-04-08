@@ -1,36 +1,45 @@
 // voice.js
 
-// Comprobar si el navegador soporta reconocimiento de voz
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const socket = io(); // Asegúrate de que esto solo se ejecute una vez
 
-if (!SpeechRecognition) {
-    alert("Tu navegador no soporta reconocimiento de voz. Prueba con Google Chrome.");
-} else {
+export function activarMicrofono() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        alert("Tu navegador no soporta reconocimiento de voz.");
+        return;
+    }
+
     const recognition = new SpeechRecognition();
-    recognition.lang = 'es-ES'; // Idioma en español
+    recognition.lang = 'es-ES';
     recognition.interimResults = false;
-    recognition.continuous = false; // Se reinicia tras cada frase
+    recognition.continuous = false;
 
-    // Iniciar automáticamente al cargar la página
-    window.addEventListener('load', () => {
-        recognition.start();
-    });
+    recognition.start();
 
-    // Reiniciar después de cada reconocimiento
-    recognition.addEventListener('end', () => {
-        recognition.start();
-    });
+    recognition.onstart = () => {
+        console.log("🎙 Micrófono activado. Puedes hablar...");
+    };
 
-    // Procesar el resultado del reconocimiento
-    recognition.addEventListener('result', (event) => {
-        const transcript = event.results[0][0].transcript.trim().toLowerCase();
-        console.log('Comando por voz detectado:', transcript);
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log("🗣 Texto reconocido:", transcript);
 
-        // Enviar el comando por Socket.IO
-        socket.emit('voiceCommand', transcript);
-    });
+        // Emitir el comando por voz al servidor
+        socket.emit("voiceCommand", transcript);
 
-    recognition.addEventListener('error', (event) => {
-        console.error('Error en reconocimiento de voz:', event.error);
-    });
+        // Mostrar en pantalla si existe un div con id="feedback"
+        const feedback = document.getElementById("feedback");
+        if (feedback) {
+            feedback.textContent = `Comando de voz: ${transcript}`;
+        }
+    };
+
+    recognition.onerror = (event) => {
+        console.error("Error en reconocimiento de voz:", event.error);
+    };
+
+    recognition.onend = () => {
+        console.log("Reconocimiento finalizado.");
+    };
 }

@@ -41,10 +41,14 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Estilo para el contenedor de los botones */
 .button-group {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 280px;
 }
 
 .gray-button {
@@ -79,8 +83,31 @@ body {
     opacity: 0.9;
 }
 
-.logo {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 1rem;
+.logo-img {
+    width: 150px;  /* Ajuste el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 2rem; /* Espaciado adecuado debajo del logo */
+}
+
+
+/* Estilo del botón de activar micrófono */
+.prototipo-button {
+    background-color: #3b82f6; /* Color de fondo */
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;         /* Bordes redondeados */
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;               /* Los botones ocupan el 100% del ancho disponible */
+    text-align: center;        /* Centra el texto */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.prototipo-button:hover {
+    background-color: #2563eb; /* Color al pasar el ratón */
+}
+
+.prototipo-button:focus {
+    outline: none; /* Elimina el borde al hacer clic */
 }

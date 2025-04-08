@@ -28,11 +28,24 @@
 
 <!-- Pantalla tras login -->
 <section id="pantalla-app" class="card pantalla-oculta">
-  <img src="../assets/Logo.png" alt="LexiLoop Logo" class="logo-img">
-  <input class="input" type="text" placeholder="Añadir Vocabulario">
-  <input class="input" type="password" placeholder="Password">
-  <!-- Elemento para mostrar feedback -->
-  <div id="feedback" style="margin-top: 1rem; font-weight: bold;"></div>
+  <img src="assets/Logo.png" alt="LexiLoop Logo" class="logo-img">
+
+  <!-- Botones con estilo específico del prototipo -->
+  <div class="button-group">
+    <button class="input" onclick="mostrarPantalla('addVocabulary')">Add Vocabulary</button>
+    <button class="input" onclick="mostrarPantalla('learnVocabulary')">Learn Vocabulary</button>
+    <button class="input" id="haveConversation">Have a conversation</button>
+  </div>
+</section>
+
+<!-- Nueva Pantalla de Conversación -->
+<section id="pantalla-conversacion" class="card pantalla-oculta">
+  <h1 class="app-title">¡Hablemos!</h1>
+
+  <!-- Botón para activar micrófono -->
+  <div class="button-group">
+    <button class="prototipo-button" id="activar-microfono">Activar micrófono</button>
+  </div>
 </section>
 
 <!-- Librería de Socket.IO (ruta por defecto) -->
@@ -40,7 +53,18 @@
 
 <!-- Rutas relativas para archivos en la misma carpeta 'frontend' -->
 <script src="cliente.js"></script>
-<script src="voice.js"></script>
+
+<script type="module">
+  import { activarMicrofono } from './voice.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('activar-microfono');
+    if (btn) {
+      btn.addEventListener('click', activarMicrofono);
+    }
+  });
+</script>
+
 <script src="ui.js"></script>
 </body>
 </html>

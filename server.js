@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -10,6 +9,9 @@ const io = new Server(server);
 
 // Servir archivos estáticos del directorio 'frontend'
 app.use(express.static('frontend'));
+
+// Servir archivos estáticos de la carpeta 'assets' para la imagen
+app.use('/assets', express.static('assets'));
 
 io.on('connection', (socket) => {
     console.log(`Cliente conectado: ${socket.id}`);

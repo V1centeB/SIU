@@ -1,11 +1,16 @@
+// Esta función debe mostrarse cuando el usuario selecciona "Have a conversation"
+function iniciarConversacion() {
+    mostrarPantalla('conversacion');  // Muestra la pantalla de conversación
+    activarMicrofono();  // Activar micrófono solo cuando entramos en esta pantalla
+}
+
+// Función para mostrar las pantallas
 function mostrarPantalla(pantalla) {
-    // Oculta todas las secciones
     document.querySelectorAll('.card').forEach(card => {
         card.classList.remove('pantalla-activa');
         card.classList.add('pantalla-oculta');
     });
 
-    // Muestra la sección solicitada
     if (pantalla === 'login') {
         document.getElementById('pantalla-login').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-login').classList.add('pantalla-activa');
@@ -16,8 +21,20 @@ function mostrarPantalla(pantalla) {
     } else if (pantalla === 'app') {
         document.getElementById('pantalla-app').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-app').classList.add('pantalla-activa');
+    } else if (pantalla === 'addVocabulary') {
+        document.getElementById('pantalla-add-vocabulary').classList.remove('pantalla-oculta');
+        document.getElementById('pantalla-add-vocabulary').classList.add('pantalla-activa');
+    } else if (pantalla === 'learnVocabulary') {
+        document.getElementById('pantalla-learn-vocabulary').classList.remove('pantalla-oculta');
+        document.getElementById('pantalla-learn-vocabulary').classList.add('pantalla-activa');
+    } else if (pantalla === 'conversacion') {
+        document.getElementById('pantalla-conversacion').classList.remove('pantalla-oculta');
+        document.getElementById('pantalla-conversacion').classList.add('pantalla-activa');
     }
 }
+
+// Llamar esta función cuando se selecciona "Have a conversation"
+document.getElementById('haveConversation').addEventListener('click', iniciarConversacion);
 
 function iniciarSesion() {
     const user = document.getElementById('usuario').value;
