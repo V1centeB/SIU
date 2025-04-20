@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>LexiLoop</title>
-  <!-- Ruta relativa a 'index.html' -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,34 +28,55 @@
 <!-- Pantalla tras login -->
 <section id="pantalla-app" class="card pantalla-oculta">
   <img src="assets/Logo.png" alt="LexiLoop Logo" class="logo-img">
-
-  <!-- Botones con estilo específico del prototipo -->
   <div class="button-group">
     <button class="input" onclick="mostrarPantalla('addVocabulary')">Add Vocabulary</button>
     <button class="input" onclick="mostrarPantalla('learnVocabulary')">Learn Vocabulary</button>
     <button class="input" id="haveConversation">Have a conversation</button>
+    <button class="input" onclick="mostrarPantalla('fillTheGaps')">Fill the Gaps</button>
   </div>
 </section>
 
-<!-- Nueva Pantalla de Conversación -->
+<!-- Pantalla Conversación -->
 <section id="pantalla-conversacion" class="card pantalla-oculta">
   <h1 class="app-title">¡Hablemos!</h1>
-
-  <!-- Botón para activar micrófono -->
   <div class="button-group">
     <button class="prototipo-button" id="activar-microfono">Activar micrófono</button>
   </div>
 </section>
 
-<!-- Librería de Socket.IO (ruta por defecto) -->
+<!-- Pantalla Fill the Gaps -->
+<section id="pantalla-fill-the-gaps" class="card pantalla-oculta">
+  <h1 class="app-title">Fill the Gaps</h1>
+  <div id="frases-con-huecos"></div>
+  <div id="opciones-tiempos" class="button-group"></div>
+  <div class="button-group">
+    <div id="resultado-respuesta" style="min-height: 1.5em; font-weight: bold; color: #333;"></div>
+    <button id="check-btn" class="gray-button">Check</button>
+    <button id="next-btn" class="gray-button" style="display:none;">Next</button>
+    <button id="pause-btn" class="gray-button">Pause</button>
+  </div>
+</section>
+
+<!-- Modal personalizado de pausa -->
+<div id="modal-pausa" class="modal-oculto">
+  <div class="modal-contenido">
+    <h2 class="app-title">Juego en pausa</h2>
+    <p>¿Qué deseas hacer?</p>
+    <div class="button-group">
+      <button class="gray-button" id="btn-volver-juego">Volver al juego</button>
+      <button class="gray-button" id="btn-ir-menu">Ir al menú principal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Librería Socket.IO -->
 <script src="/socket.io/socket.io.js"></script>
 
-<!-- Rutas relativas para archivos en la misma carpeta 'frontend' -->
+<!-- Scripts frontend -->
 <script src="cliente.js"></script>
-
+<script src="ui.js"></script>
 <script type="module">
   import { activarMicrofono } from './voice.js';
-
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('activar-microfono');
     if (btn) {
@@ -64,7 +84,7 @@
     }
   });
 </script>
+<script src="fill-the-gaps.js"></script>
 
-<script src="ui.js"></script>
 </body>
 </html>

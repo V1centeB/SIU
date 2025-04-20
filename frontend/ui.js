@@ -31,6 +31,10 @@ function mostrarPantalla(pantalla) {
         document.getElementById('pantalla-conversacion').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-conversacion').classList.add('pantalla-activa');
     }
+    else if (pantalla === 'fillTheGaps') {
+        document.getElementById('pantalla-fill-the-gaps').classList.remove('pantalla-oculta');
+        document.getElementById('pantalla-fill-the-gaps').classList.add('pantalla-activa');
+    }
 }
 
 // Llamar esta función cuando se selecciona "Have a conversation"
