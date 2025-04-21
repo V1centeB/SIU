@@ -31,16 +31,6 @@ function mostrarPantalla(pantalla) {
         document.getElementById('pantalla-conversacion').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-conversacion').classList.add('pantalla-activa');
     }
-
-    // MOSTRAR / OCULTAR la cámara en función de la pantalla activa
-    const camara = document.getElementById('camara-container');
-    if (camara) {
-        if (pantalla === 'learnVocabulary') {
-            camara.classList.remove('pantalla-oculta');
-        } else {
-            camara.classList.add('pantalla-oculta');
-        }
-    }
 }
 
 // Llamar esta función cuando se selecciona "Have a conversation"
