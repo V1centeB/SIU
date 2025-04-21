@@ -38,6 +38,59 @@
   </div>
 </section>
 
+<!-- Pantalla Learn Vocabulary -->
+<section id="pantalla-learnVocabulary" class="card pantalla-oculta">
+  <h2 class="app-title">Learn Vocabulary</h2>
+  <p>Arrastra cada palabra en inglés al hueco correcto</p>
+
+  <div class="matching-container">
+    <div class="column">
+      <h3>Español</h3>
+      <div class="static-word">Casa</div>
+      <div class="static-word">Perro</div>
+      <div class="static-word">Rojo</div>
+      <div class="static-word">Gato</div>
+      <div class="static-word">Agua</div>
+      <div class="static-word">Cielo</div>
+    </div>
+    <div class="column">
+      <h3>Inglés</h3>
+      <div class="drop-zone" data-translation="House"></div>
+      <div class="drop-zone" data-translation="Dog"></div>
+      <div class="drop-zone" data-translation="Red"></div>
+      <div class="drop-zone" data-translation="Cat"></div>
+      <div class="drop-zone" data-translation="Water"></div>
+      <div class="drop-zone" data-translation="Sky"></div>
+    </div>
+  </div>
+
+  <div class="word-bank">
+    <div class="draggable-word" draggable="true">House</div>
+    <div class="draggable-word" draggable="true">Dog</div>
+    <div class="draggable-word" draggable="true">Red</div>
+    <div class="draggable-word" draggable="true">Cat</div>
+    <div class="draggable-word" draggable="true">Water</div>
+    <div class="draggable-word" draggable="true">Sky</div>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <button id="comprobar-btn" class="prototipo-button">Comprobar</button>
+    <p id="resultado-check" style="margin-top: 10px; font-weight: bold;"></p>
+  </div>
+  
+</section>
+
+<!-- Cámara flotante con detección -->
+<div id="camara-container" class="pantalla-oculta">
+  <div style="position: fixed; bottom: 10px; right: 10px; width: 200px; height: 150px; z-index: 1000;">
+    <video id="webcam" autoplay muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></video>
+    <canvas id="hand-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+  </div>
+</div>
+
+
+
+
 <!-- Nueva Pantalla de Conversación -->
 <section id="pantalla-conversacion" class="card pantalla-oculta">
   <h1 class="app-title">¡Hablemos!</h1>
@@ -66,5 +119,25 @@
 </script>
 
 <script src="ui.js"></script>
+<script src="vocab.js"></script>
+<script type="module" src="hand-control.js"></script>
+<div id="mano-status" style="
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 999;
+  font-family: sans-serif;
+">
+  🟡 Esperando cámara...
+</div>
+
+<div id="puntero-mano"></div>
+
 </body>
 </html>
+
