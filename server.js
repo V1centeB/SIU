@@ -1,14 +1,16 @@
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
+const fs = require('fs');
+const path = require('path');
+
 const { handleVoiceCommand, handleGestureDetected } = require('./backend/handlers');
+const phrasesPath = path.join(__dirname, 'data/voice_phrases.txt');
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const fs = require('fs');
-const path = require('path');
 
 // send logs
 function logEvent(message) {
@@ -16,7 +18,11 @@ function logEvent(message) {
     const line = `[${timestamp}] ${message}\n`;
     const logPath = path.join(__dirname, 'data/logs.txt');
     fs.appendFileSync(logPath, line);
+
+    // Emitir a todos los clientes conectados (log en vivo)
+    io.emit('newLog', `[${new Date().toLocaleTimeString()}] ${message}`);
 }
+
 
 // Servir archivos estáticos del directorio 'frontend'
 app.use(express.static('frontend'));
@@ -27,7 +33,7 @@ app.use('/assets', express.static('assets'));
 // Ruta para servir el archivo HTML principal
 app.use(express.json());
 
-// 
+//
 app.get('/logs', (req, res) => {
     const logPath = path.join(__dirname, 'data/logs.txt');
 
@@ -37,6 +43,16 @@ app.get('/logs', (req, res) => {
     } else {
         res.send('No logs yet.');
     }
+});
+
+app.get('/frase-aleatoria', (req, res) => {
+    if (!fs.existsSync(phrasesPath)) return res.status(500).send("No frases disponibles.");
+
+    const contenido = fs.readFileSync(phrasesPath, 'utf-8');
+    const frases = contenido.split('\n').map(f => f.trim().toLowerCase()).filter(Boolean);
+    const aleatoria = frases[Math.floor(Math.random() * frases.length)];
+
+    res.send(aleatoria);
 });
 
 // REGISTER endpoint
@@ -61,7 +77,7 @@ app.post('/register', (req, res) => {
     }
 
     fs.appendFileSync(filePath, userLine + '\n');
-    logEvent(`User registered: ${username}`);  
+    logEvent(`User registered: ${username}`);
     res.status(201).send('User registered');
 });
 
@@ -97,7 +113,6 @@ app.post('/log', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log(`Cliente conectado: ${socket.id}`);
 
     // Evento para comando de voz
     socket.on('voiceCommand', (command) => {
@@ -115,6 +130,6 @@ io.on('connection', (socket) => {
 });
 
 const PORT = 3000;
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

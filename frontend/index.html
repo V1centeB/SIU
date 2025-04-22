@@ -118,13 +118,22 @@
 </div>
 
 
-<!-- Pantalla Conversación -->
+<!-- Pantalla de Conversación -->
 <section id="pantalla-conversacion" class="card pantalla-oculta">
-  <h1 class="app-title">¡Hablemos!</h1>
+  <h1 class="app-title">Repeat the following sentence!!</h1>
+
+  <!-- Frase objetivo a pronunciar -->
+  <div id="frase-a-decir" class="frase-box">Hello how are you</div>
+
+  <!-- Botón para activar micrófono -->
   <div class="button-group">
-    <button class="prototipo-button" id="activar-microfono">Activar micrófono</button>
+    <button class="input" id="activar-microfono">Activar micrófono</button>
+    <button class="input" id="cambiar-frase">Change phrase</button>
+    <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
   </div>
-  <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
+
+  <!-- Resultado -->
+  <div id="resultado-pronunciacion" style="margin-top: 1rem; font-weight: bold;"></div>
 </section>
 
 <!-- Pantalla Fill the Gaps -->
@@ -156,16 +165,40 @@
 <script src="/socket.io/socket.io.js"></script>
 
 <!-- Scripts frontend -->
-<script src="cliente.js"></script>
 <script type="module">
-  import { activarMicrofono } from './voice.js';
+  import { activarMicrofono, cargarFraseAleatoria } from './voice.js';
+
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('activar-microfono');
     if (btn) {
       btn.addEventListener('click', activarMicrofono);
     }
+
+    const cambiarFraseBtn = document.getElementById('cambiar-frase');
+    if (cambiarFraseBtn) {
+      cambiarFraseBtn.addEventListener('click', cargarFraseAleatoria);
+    }
+
+    let fraseYaCargada = false;
+
+    const observer = new MutationObserver(() => {
+      const pantalla = document.getElementById('pantalla-conversacion');
+      const visible = pantalla && !pantalla.classList.contains('pantalla-oculta');
+
+      if (visible && !fraseYaCargada) {
+        cargarFraseAleatoria();
+        fraseYaCargada = true;
+      } else if (!visible) {
+        fraseYaCargada = false;
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
   });
 </script>
+
+
+
 
 <script src="fill-the-gaps.js"></script>
 

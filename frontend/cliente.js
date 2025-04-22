@@ -28,8 +28,7 @@ function showFeedback(message) {
 
 // Eventos recibidos del servidor
 socket.on('voiceCommand', (cmd) => {
-    console.log('Comando por voz recibido:', cmd);
-    showFeedback(`Comando por voz recibido: ${cmd}`);
+    console.log('Recognized text::', cmd);
 });
 
 socket.on('gestureDetected', (gesture) => {

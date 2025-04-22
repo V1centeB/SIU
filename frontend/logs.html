@@ -64,6 +64,7 @@
 
   // 2. Add real-time logs via Socket.IO
   socket.on('connect', () => addLog(`[${new Date().toLocaleTimeString()}] Cliente conectado con ID: ${socket.id}`));
+  socket.on('newLog', (mensaje) => addLog(`[${new Date().toLocaleTimeString()}] ${mensaje}`));
   socket.on('voiceCommand', (cmd) => addLog(`[${new Date().toLocaleTimeString()}] Comando por voz recibido: ${cmd}`));
   socket.on('gestureDetected', (gesture) => addLog(`[${new Date().toLocaleTimeString()}] Gesto detectado: ${gesture}`));
   socket.on('analysisResult', (result) => addLog(`[${new Date().toLocaleTimeString()}] Resultado del análisis: ${JSON.stringify(result)}`));
