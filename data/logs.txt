@@ -1,0 +1,15 @@
+[2025-04-21T07:21:37.816Z] User logged in: aless
+[2025-04-21T07:24:14.907Z] User logged in: test
+[2025-04-21T07:26:33.927Z] User logged in: aless
+[2025-04-21T07:26:36.209Z] User started Learn Grammar
+[2025-04-21T07:28:01.002Z] User logged in: aless
+[2025-04-21T07:28:07.494Z] User started Learn Grammar
+[2025-04-22T11:00:15.184Z] User registered: add
+[2025-04-22T11:00:21.004Z] User logged in: add
+[2025-04-22T11:00:23.896Z] User started Learn Grammar
+[2025-04-22T11:01:16.451Z] User logged in: add
+[2025-04-22T11:01:34.189Z] User logged in: add
+[2025-04-22T11:02:06.358Z] User logged in: add
+[2025-04-22T11:02:08.368Z] User started Learn Grammar
+[2025-04-22T11:05:02.650Z] User logged in: add
+[2025-04-22T11:05:18.273Z] User started Learn Grammar

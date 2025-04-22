@@ -23,19 +23,48 @@
   <input class="input" type="text" placeholder="User / Email" id="usuario">
   <input class="input" type="password" placeholder="Password" id="password">
   <button class="gray-button" onclick="iniciarSesion()">Entrar</button>
+
+  <button class="back-button" onclick="mostrarPantalla('inicio')">← Back</button>
+</section>
+
+<!-- Pantalla Registro -->
+<section id="pantalla-registro" class="card pantalla-oculta">
+  <h1 class="app-title">Create Account</h1>
+  <input class="input" type="text" placeholder="Username" id="registro-usuario">
+  <input class="input" type="password" placeholder="Password" id="registro-password">
+  <button class="gray-button" onclick="registrarse()">Register</button>
+
+  <!-- Back to login -->
+  <button class="back-button" onclick="mostrarPantalla('inicio')">← Back</button>
 </section>
 
 <!-- Pantalla tras login -->
 <section id="pantalla-app" class="card pantalla-oculta">
   <img src="assets/Logo.png" alt="LexiLoop Logo" class="logo-img">
   <div class="button-group">
-    <button class="input" onclick="mostrarPantalla('addVocabulary')">Add Vocabulary</button>
+    <button class="input" onclick="mostrarPantalla('learnGrammar')">Learn Grammar</button>
     <button class="input" onclick="mostrarPantalla('learnVocabulary')">Learn Vocabulary</button>
     <button class="input" id="haveConversation">Have a conversation</button>
     <button class="input" onclick="mostrarPantalla('fillTheGaps')">Fill the Gaps</button>
   </div>
+  <button class="back-button" onclick="mostrarPantalla('login')">← Back</button>
 </section>
 
+
+<section id="pantalla-learn-grammar" class="card pantalla-oculta">
+  <div class="grammar-header">
+    <span id="lives-display">Lives: 3</span>
+    <span id="timer-display">Time: 05:00</span>
+  </div>
+
+  <h1 class="app-title">Learn Grammar</h1>
+  <div id="grammar-content">
+    <p>Aquí aparecerá el contenido de gramática.</p>
+  </div>
+
+  <!-- Back to main screen -->
+  <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
+</section>
 
 <!-- Pantalla Learn Vocabulary -->
 <section id="pantalla-learnVocabulary" class="card pantalla-oculta">
@@ -76,6 +105,7 @@
     <button id="comprobar-btn" class="prototipo-button">Comprobar</button>
     <p id="resultado-check" style="margin-top: 10px; font-weight: bold;"></p>
   </div>
+  <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
   
 </section>
 
@@ -94,6 +124,7 @@
   <div class="button-group">
     <button class="prototipo-button" id="activar-microfono">Activar micrófono</button>
   </div>
+  <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
 </section>
 
 <!-- Pantalla Fill the Gaps -->

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LexiLoop - Logs</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #1e1e1e;
+      color: #dcdcdc;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #3b82f6;
+    }
+
+    #log-container {
+      margin-top: 1rem;
+      max-height: 80vh;
+      overflow-y: auto;
+      border: 1px solid #555;
+      padding: 1rem;
+      background-color: #2e2e2e;
+    }
+
+    .log-entry {
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dashed #444;
+      padding-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <h1> LexiLoop Logs</h1>
+  <div id="log-container"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  const logContainer = document.getElementById('log-container');
+
+  function addLog(message) {
+    const entry = document.createElement('div');
+    entry.classList.add('log-entry');
+    entry.textContent = message;
+    logContainer.appendChild(entry);
+    logContainer.scrollTop = logContainer.scrollHeight;
+  }
+
+  // 1. Load historical logs from the server
+  fetch('/logs')
+    .then(res => res.text())
+    .then(data => {
+      const lines = data.split('<br>');
+      lines.forEach(line => {
+        if (line.trim()) addLog(line);
+      });
+    })
+    .catch(err => {
+      addLog('Error loading saved logs');
+      console.error(err);
+    });
+
+  // 2. Add real-time logs via Socket.IO
+  socket.on('connect', () => addLog(`[${new Date().toLocaleTimeString()}] Cliente conectado con ID: ${socket.id}`));
+  socket.on('voiceCommand', (cmd) => addLog(`[${new Date().toLocaleTimeString()}] Comando por voz recibido: ${cmd}`));
+  socket.on('gestureDetected', (gesture) => addLog(`[${new Date().toLocaleTimeString()}] Gesto detectado: ${gesture}`));
+  socket.on('analysisResult', (result) => addLog(`[${new Date().toLocaleTimeString()}] Resultado del análisis: ${JSON.stringify(result)}`));
+</script>
+
+</body>
+</html>

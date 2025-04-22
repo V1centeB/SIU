@@ -264,3 +264,89 @@ body {
     background-color: rgba(255, 50, 50, 0.8); /* Rojo cuando hace 'pinch' */
     border-color: red;
   }  
+
+
+  .grammar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+}
+/* Estilo para el contenedor de la gramática */
+#pantalla-learn-grammar {
+    max-width: none;
+    width: 90%;
+    height: 90vh;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+#grammar-content button {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#grammar-content button:hover {
+    background-color: #2563eb;
+}
+
+#grammar-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #10b981;
+    text-align: center;
+}
+
+/* el mensaje de game over */
+#grammar-content p {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #5d19cc;
+}
+
+
+
+/* Alessandro*/
+/* Estilo para el botón de reinicio */
+.replay-button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.replay-button:hover {
+    background-color: #2563eb;
+}
+
+.back-button {
+    margin-top: 2rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #e5e7eb;
+    color: #111827;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #d1d5db;
+}
