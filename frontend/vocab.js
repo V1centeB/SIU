@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const resultado = document.getElementById('resultado-check');
     if (correct === total) {
-      resultado.textContent = '✅ ¡Todo correcto!';
+      resultado.textContent = ' ¡Todo correcto!';
       resultado.style.color = 'green';
     } else {
-      resultado.textContent = `❌ ${correct} de ${total} correctos`;
+      resultado.textContent = ` ${correct} de ${total} correctos`;
       resultado.style.color = 'red';
     }
   

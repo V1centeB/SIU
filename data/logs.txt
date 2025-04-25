@@ -1,92 +1,41 @@
-[2025-04-22T12:43:02.662Z] User logged in: vic
-[2025-04-22T12:43:13.468Z] Micrófono activado...
-[2025-04-22T12:43:18.749Z] Texto reconocido: "hello"
-[2025-04-22T12:43:18.750Z] Reconocimiento finalizado.
-[2025-04-22T13:57:12.829Z] User logged in: vic
-[2025-04-22T14:07:17.288Z] User logged in: vic
-[2025-04-22T14:10:30.350Z] Microphone Enabled...
-[2025-04-22T14:10:36.322Z] ❌ Error de reconocimiento: aborted
-[2025-04-22T14:10:36.332Z] Microphone Disabled
-[2025-04-22T14:10:36.339Z] Microphone Enabled...
-[2025-04-22T14:10:40.412Z] Recognized text: "hello how are you"
-[2025-04-22T14:10:40.430Z] Microphone Disabled
-[2025-04-22T14:10:46.514Z] Microphone Enabled...
-[2025-04-22T14:10:51.796Z] Recognized text: "can you hear me"
-[2025-04-22T14:10:51.813Z] Microphone Disabled
-[2025-04-22T14:11:13.696Z] User logged in: vic
-[2025-04-22T14:11:52.714Z] User logged in: vic
-[2025-04-22T14:17:42.331Z] Microphone Enabled...
-[2025-04-22T14:17:49.530Z] Recognized text: "no"
-[2025-04-22T14:17:49.541Z] Microphone Disabled
-[2025-04-22T14:18:16.520Z] User logged in: vic
-[2025-04-22T14:18:43.889Z] Microphone Enabled...
-[2025-04-22T15:20:00.124Z] User logged in: vic
-[2025-04-22T15:20:04.857Z] User logged in: vic
-[2025-04-22T15:20:11.506Z] Microphone Enabled...
-[2025-04-22T15:20:15.774Z] Recognized text: "hola"
-[2025-04-22T15:20:15.790Z] Microphone Disabled
-[2025-04-22T16:03:07.581Z] User logged in: vic
-[2025-04-22T16:04:08.564Z] User logged in: vic
-[2025-04-22T16:04:56.869Z] User logged in: vic
-[2025-04-22T16:05:57.833Z] User logged in: vic
-[2025-04-22T16:07:03.763Z] User logged in: vic
-[2025-04-22T16:11:07.917Z] User logged in: vic
-[2025-04-22T16:25:33.195Z] User logged in: vic
-[2025-04-22T16:25:44.348Z] User started Learn Grammar
-[2025-04-22T16:32:41.374Z] User logged in: vic
-[2025-04-22T16:33:33.777Z] User logged in: vic
-[2025-04-22T16:35:12.642Z] User logged in: vic
-[2025-04-22T16:36:26.977Z] User logged in: vic
-[2025-04-22T16:37:28.084Z] User logged in: vic
-[2025-04-22T16:38:37.042Z] User logged in: vic
-[2025-04-22T16:39:07.431Z] User logged in: vic
-[2025-04-22T16:43:44.299Z] User logged in: vic
-[2025-04-22T16:44:35.441Z] User logged in: vic
-[2025-04-22T16:44:38.318Z] Microphone Enabled...
-[2025-04-22T16:44:44.298Z] Recognized text: "hello"
-[2025-04-22T16:44:44.313Z] Microphone Disabled
-[2025-04-22T16:45:17.463Z] User logged in: vic
-[2025-04-22T16:45:21.032Z] Microphone Enabled...
-[2025-04-22T16:45:34.451Z] Recognized text: "hello hello"
-[2025-04-22T16:45:34.460Z] Microphone Disabled
-[2025-04-22T16:54:19.608Z] User logged in: vic
-[2025-04-22T16:54:26.279Z] Microphone Enabled...
-[2025-04-22T16:54:32.257Z] Recognized text: "hello"
-[2025-04-22T16:54:32.281Z] Microphone Disabled
-[2025-04-22T16:56:25.944Z] User logged in: vic
-[2025-04-22T16:56:31.408Z] Microphone Enabled...
-[2025-04-22T16:56:37.403Z] Recognized text: "speak english"
-[2025-04-22T16:56:37.415Z] Microphone Disabled
-[2025-04-22T16:56:40.757Z] Microphone Enabled...
-[2025-04-22T16:56:46.005Z] Recognized text: "do you speak english"
-[2025-04-22T16:56:46.020Z] Microphone Disabled
-[2025-04-22T17:08:02.912Z] User logged in: vic
-[2025-04-22T17:10:46.028Z] User logged in: vic
-[2025-04-22T17:11:06.865Z] Microphone Enabled...
-[2025-04-22T17:11:12.116Z] Recognized text: "my name is alex"
-[2025-04-22T17:11:12.130Z] Microphone Disabled
-[2025-04-22T17:12:13.500Z] User logged in: vic
-[2025-04-22T17:12:22.348Z] User started Learn Grammar
-[2025-04-22T17:12:48.978Z] User started Learn Grammar
-[2025-04-22T17:14:05.453Z] User logged in: vic
-[2025-04-22T17:14:20.043Z] User started Learn Grammar
-[2025-04-22T17:15:41.234Z] User logged in: vic
-[2025-04-22T20:35:22.299Z] User logged in: vic
-[2025-04-22T20:37:16.134Z] User logged in: vic
-[2025-04-22T20:37:33.815Z] Microphone Enabled...
-[2025-04-22T20:37:40.006Z] Recognized text: "he is watching tv"
-[2025-04-22T20:37:40.013Z] Microphone Disabled
-[2025-04-22T20:38:02.824Z] Microphone Enabled...
-[2025-04-22T20:38:08.080Z] Recognized text: "the bus is coming"
-[2025-04-22T20:38:08.096Z] Microphone Disabled
-[2025-04-22T20:40:42.123Z] User logged in: vic
-[2025-04-22T20:40:49.936Z] Microphone Enabled...
-[2025-04-22T20:40:55.443Z] Recognized text: "where is the supermarket"
-[2025-04-22T20:40:55.458Z] Microphone Disabled
-[2025-04-22T20:42:44.815Z] User started Learn Grammar
-[2025-04-22T20:45:13.987Z] User registered: roro
-[2025-04-22T20:57:06.806Z] User logged in: vic
-[2025-04-22T20:57:33.214Z] User logged in: vic
-[2025-04-22T21:08:05.003Z] User logged in: vic
-[2025-04-22T21:08:06.340Z] User started Learn Grammar
-[2025-04-22T21:34:37.231Z] User logged in: vic
+[2025-04-23T12:49:59.697Z] User registered: vicente
+[2025-04-23T12:50:16.911Z] User logged in: vicente
+[2025-04-23T12:50:35.957Z] Microphone Enabled...
+[2025-04-23T12:50:44.558Z] ❌ Error de reconocimiento: no-speech
+[2025-04-23T12:50:44.562Z] Microphone Disabled
+[2025-04-23T12:51:24.804Z] User started Learn Grammar
+[2025-04-25T10:52:13.934Z] User logged in: vic
+[2025-04-25T10:53:39.811Z] User logged in: vic
+[2025-04-25T10:56:10.999Z] User logged in: vic
+[2025-04-25T11:00:39.706Z] User logged in: vic
+[2025-04-25T11:03:03.971Z] User logged in: vic
+[2025-04-25T11:05:33.492Z] User started Learn Grammar
+[2025-04-25T11:14:55.303Z] User logged in: vic
+[2025-04-25T11:14:56.391Z] User started Learn Grammar
+[2025-04-25T11:15:20.355Z] Microphone Enabled...
+[2025-04-25T11:15:26.173Z] Recognized text: "hello"
+[2025-04-25T11:15:26.190Z] Microphone Disabled
+[2025-04-25T11:15:49.991Z] User started Learn Grammar
+[2025-04-25T11:20:26.781Z] User logged in: vic
+[2025-04-25T11:20:28.836Z] User started Learn Grammar
+[2025-04-25T11:21:48.479Z] User registered: vicente1
+[2025-04-25T11:21:58.941Z] User logged in: vicente1
+[2025-04-25T11:23:38.001Z] User logged in: vic
+[2025-04-25T11:23:51.695Z] User started Learn Grammar
+[2025-04-25T11:26:29.430Z] User registered: vice
+[2025-04-25T11:26:35.892Z] User logged in: vice
+[2025-04-25T11:26:37.075Z] User started Learn Grammar
+[2025-04-25T11:27:12.435Z] User logged in: vic
+[2025-04-25T11:27:31.955Z] User logged in: vic
+[2025-04-25T11:27:48.218Z] Your browser does not support voice recognition.
+[2025-04-25T11:28:07.390Z] User logged in: vic
+[2025-04-25T11:28:11.110Z] Microphone Enabled...
+[2025-04-25T11:28:26.908Z] Recognized text: "hello hello"
+[2025-04-25T11:28:26.922Z] Microphone Disabled
+[2025-04-25T11:35:13.554Z] User logged in: vic
+[2025-04-25T11:35:14.566Z] User started Have a Conversation
+[2025-04-25T11:37:10.272Z] User logged in: vic
+[2025-04-25T11:37:13.169Z] User started Lear Vocabulary
+[2025-04-25T11:37:19.819Z] User started Have a Conversation
+[2025-04-25T11:37:23.052Z] User started Learn Grammar
+[2025-04-25T11:37:32.737Z] User started Fill the Gaps

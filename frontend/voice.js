@@ -1,11 +1,9 @@
-const socket = io(); // Asegúrate de que esto solo se ejecute una vez
-
 export function activarMicrofono() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
-        log('⚠️ Tu navegador no soporta reconocimiento de voz.');
-        alert("Tu navegador no soporta reconocimiento de voz.");
+        log('Your browser does not support voice recognition.');
+        alert("Your browser does not support voice recognition.");
         return;
     }
 
@@ -29,16 +27,16 @@ export function activarMicrofono() {
         const resultadoDiv = document.getElementById('resultado-pronunciacion');
 
         if (!fraseObjetivo) {
-            resultadoDiv.textContent = "⚠️ No hay frase objetivo definida.";
-            log("⚠️ No hay frase objetivo definida.");
+            resultadoDiv.textContent = "No target sentence defined.";
+            log("No target sentence defined.");
             return;
         }
 
         if (compararFrases(transcript, fraseObjetivo)) {
-            resultadoDiv.textContent = "✅ ¡Pronunciación correcta!";
+            resultadoDiv.textContent = "Correct pronunciation!";
             resultadoDiv.style.color = "green";
         } else {
-            resultadoDiv.textContent = `❌ Te entendí: "${transcript}". Intenta pronunciar mejor.`;
+            resultadoDiv.textContent = `Incorrect answer. I understood: "${transcript}". Try to pronounce better.`;
             resultadoDiv.style.color = "red";
         }
 
@@ -47,7 +45,7 @@ export function activarMicrofono() {
     };
 
     recognition.onerror = (event) => {
-        log(`❌ Error de reconocimiento: ${event.error}`);
+        log(`Recognition error: ${event.error}`);
     };
 
     recognition.onend = () => {
@@ -68,7 +66,7 @@ function log(message) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message })
     }).catch(err => {
-        console.warn('⚠️ No se pudo enviar el log al servidor:', err);
+        console.warn('Failed to send the log to the server:', err);
     });
 }
 
@@ -80,7 +78,7 @@ export function cargarFraseAleatoria() {
             if (contenedor) contenedor.textContent = frase;
         })
         .catch(err => {
-            console.error("❌ Error al cargar frase:", err);
+            console.error(" Error al cargar frase:", err);
         });
 }
 

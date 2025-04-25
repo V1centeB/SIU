@@ -99,11 +99,11 @@ document.getElementById("check-btn").addEventListener("click", () => {
   const resultado = document.getElementById("resultado-respuesta");
 
   if (correcto) {
-    resultado.textContent = "✅ ¡Todo correcto!";
+    resultado.textContent = "Everything is correct!";
     resultado.style.color = "green";
     document.getElementById("next-btn").style.display = "inline-block";
   } else {
-    resultado.textContent = "❌ Hay errores. Intenta de nuevo.";
+    resultado.textContent = "There are errors. Try again.";
     resultado.style.color = "red";
   }
 });

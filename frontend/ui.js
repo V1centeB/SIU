@@ -1,4 +1,3 @@
-// Esta función debe mostrarse cuando el usuario selecciona "Have a conversation"
 function iniciarConversacion() {
     mostrarPantalla('conversacion');  // Muestra la pantalla de conversación
     activarMicrofono();  // Activar micrófono solo cuando entramos en esta pantalla
@@ -30,13 +29,28 @@ function mostrarPantalla(pantalla) {
     } else if (pantalla === 'learnVocabulary') {
         document.getElementById('pantalla-learnVocabulary').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-learnVocabulary').classList.add('pantalla-activa');
+        fetch('/log', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: 'User started Lear Vocabulary' })
+        });
     } else if (pantalla === 'conversacion') {
         document.getElementById('pantalla-conversacion').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-conversacion').classList.add('pantalla-activa');
+        fetch('/log', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: 'User started Have a Conversation' })
+        });
     }
     else if (pantalla === 'fillTheGaps') {
         document.getElementById('pantalla-fill-the-gaps').classList.remove('pantalla-oculta');
         document.getElementById('pantalla-fill-the-gaps').classList.add('pantalla-activa');
+        fetch('/log', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: 'User started Fill the Gaps' })
+        });
     }
 
     // MOSTRAR / OCULTAR la cámara en función de la pantalla activa
@@ -94,12 +108,12 @@ function registrarse() {
     })
     .then(res => {
         if (res.status === 201) {
-            alert('✅ Usuario registrado. Ahora puedes iniciar sesión.');
+            alert('Registered user. You can now log in.');
             mostrarPantalla('login');
         } else if (res.status === 409) {
-            alert('Ese nombre de usuario ya existe.');
+            alert('That username already exists.');
         } else {
-            alert('Error registrando usuario.');
+            alert('Error registering user.');
         }
     });
 }
@@ -132,13 +146,13 @@ function iniciarSesionGramatica() {
       });
       
 
-    // Reset lives and time
+    // Reestablecer contadores
     lives = 3;
     timeLeft = 300;
     score = 0;
 
 
-    // Update UI
+    // Acutualizar la UI
     document.getElementById('lives-display').textContent = `Lives: ${lives}`;
     updateTimerUI();
 

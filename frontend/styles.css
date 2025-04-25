@@ -92,20 +92,20 @@ body {
 
 /* Estilo del botón de activar micrófono */
 .prototipo-button {
-    background-color: #3b82f6; /* Color de fondo */
+    background-color: #3b82f6;
     border: none;
     padding: 0.8rem 1.2rem;
-    border-radius: 8px;         /* Bordes redondeados */
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    width: 100%;               /* Los botones ocupan el 100% del ancho disponible */
-    text-align: center;        /* Centra el texto */
+    width: 100%;
+    text-align: center;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 .prototipo-button:hover {
-    background-color: #2563eb; /* Color al pasar el ratón */
+    background-color: #2563eb;
 }
 
 .prototipo-button:focus {
@@ -315,9 +315,6 @@ body {
     color: #5d19cc;
 }
 
-
-
-/* Alessandro*/
 /* Estilo para el botón de reinicio */
 .replay-button {
     margin-top: 2rem;

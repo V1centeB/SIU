@@ -24,7 +24,7 @@ function handleVoiceCommand(socket, io, command) {
     }
 
     const sanitizedCommand = command.trim();
-    console.log(`Comando de voz recibido: ${sanitizedCommand}`);
+    console.log(`Voice command received: ${sanitizedCommand}`);
 
     // Emite el comando a todos los clientes conectados
     io.emit('voiceCommand', sanitizedCommand);
@@ -32,7 +32,7 @@ function handleVoiceCommand(socket, io, command) {
     // Ejecuta el script de Python de forma segura utilizando execFile
     execFile('python3', ['scripts/analizar_comando.py', sanitizedCommand], (error, stdout, stderr) => {
         if (error) {
-            console.error('Error al analizar comando:', error.message);
+            console.error('Error analyzing command:', error.message);
             socket.emit('analysisResult', { error: error.message });
             return;
         }
@@ -50,12 +50,12 @@ function handleVoiceCommand(socket, io, command) {
  */
 function handleGestureDetected(socket, io, gesture) {
     if (!isValidString(gesture)) {
-        console.error('Gesto inválido recibido');
+        console.error('Invalid gesture received.');
         return;
     }
 
     const sanitizedGesture = gesture.trim();
-    console.log(`Gesto detectado: ${sanitizedGesture}`);
+    console.log(`Gesture detected: ${sanitizedGesture}`);
     io.emit('gestureDetected', sanitizedGesture);
 }
 

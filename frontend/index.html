@@ -19,10 +19,10 @@
 <!-- Pantalla Login -->
 <section id="pantalla-login" class="card pantalla-oculta">
   <h1 class="app-title">LexiLoop</h1>
-  <label class="label">Iniciar Sesión</label>
-  <input class="input" type="text" placeholder="User / Email" id="usuario">
-  <input class="input" type="password" placeholder="Password" id="password">
-  <button class="gray-button" onclick="iniciarSesion()">Entrar</button>
+  <label class="label">Sign in</label>
+  <label for="usuario"></label><input class="input" type="text" placeholder="User / Email" id="usuario">
+  <label for="password"></label><input class="input" type="password" placeholder="Password" id="password">
+  <button class="gray-button" onclick="iniciarSesion()">Log in</button>
 
   <button class="back-button" onclick="mostrarPantalla('inicio')">← Back</button>
 </section>
@@ -30,8 +30,8 @@
 <!-- Pantalla Registro -->
 <section id="pantalla-registro" class="card pantalla-oculta">
   <h1 class="app-title">Create Account</h1>
-  <input class="input" type="text" placeholder="Username" id="registro-usuario">
-  <input class="input" type="password" placeholder="Password" id="registro-password">
+  <label for="registro-usuario"></label><input class="input" type="text" placeholder="Username" id="registro-usuario">
+  <label for="registro-password"></label><input class="input" type="password" placeholder="Password" id="registro-password">
   <button class="gray-button" onclick="registrarse()">Register</button>
 
   <!-- Back to login -->
@@ -59,7 +59,7 @@
 
   <h1 class="app-title">Learn Grammar</h1>
   <div id="grammar-content">
-    <p>Aquí aparecerá el contenido de gramática.</p>
+    <p>The grammar content will appear here.</p>
   </div>
 
   <!-- Back to main screen -->
@@ -69,7 +69,7 @@
 <!-- Pantalla Learn Vocabulary -->
 <section id="pantalla-learnVocabulary" class="card pantalla-oculta">
   <h2 class="app-title">Learn Vocabulary</h2>
-  <p>Arrastra cada palabra en inglés al hueco correcto</p>
+  <p>Drag each word in English to the correct gap</p>
 
   <div class="matching-container">
     <div class="column">
@@ -102,7 +102,7 @@
   </div>
 
   <div style="margin-top: 20px;">
-    <button id="comprobar-btn" class="prototipo-button">Comprobar</button>
+    <button id="comprobar-btn" class="prototipo-button">Check</button>
     <p id="resultado-check" style="margin-top: 10px; font-weight: bold;"></p>
   </div>
   <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
@@ -127,7 +127,7 @@
 
   <!-- Botón para activar micrófono -->
   <div class="button-group">
-    <button class="input" id="activar-microfono">Activar micrófono</button>
+    <button class="input" id="activar-microfono">Turn on microphone</button>
     <button class="input" id="cambiar-frase">Change phrase</button>
     <button class="back-button" onclick="mostrarPantalla('app')">← Back</button>
   </div>
@@ -152,11 +152,11 @@
 <!-- Modal personalizado de pausa -->
 <div id="modal-pausa" class="modal-oculto">
   <div class="modal-contenido">
-    <h2 class="app-title">Juego en pausa</h2>
-    <p>¿Qué deseas hacer?</p>
+    <h2 class="app-title">Game paused</h2>
+    <p>What do you want to d?</p>
     <div class="button-group">
-      <button class="gray-button" id="btn-volver-juego">Volver al juego</button>
-      <button class="gray-button" id="btn-ir-menu">Ir al menú principal</button>
+      <button class="gray-button" id="btn-volver-juego">Return to the game</button>
+      <button class="gray-button" id="btn-ir-menu">Go to the main menu</button>
     </div>
   </div>
 </div>
@@ -219,7 +219,7 @@
   z-index: 999;
   font-family: sans-serif;
 ">
-  🟡 Esperando cámara...
+  🟡 Waiting for camera...
 </div>
 
 <div id="puntero-mano"></div>

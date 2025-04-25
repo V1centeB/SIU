@@ -49,7 +49,7 @@ function loop() {
   const results = handLandmarker.detectForVideo(video, now);
 
   if (results.landmarks.length > 0) {
-    document.getElementById("mano-status").textContent = "🟢 Mano detectada";
+    document.getElementById("mano-status").textContent = "🟢 Hand detected";
 
     const index = results.landmarks[0][8];
     const thumb = results.landmarks[0][4];
@@ -105,7 +105,7 @@ function loop() {
       grabbedElement.style.zIndex = 9999;
     }
   } else {
-    document.getElementById("mano-status").textContent = "🔴 Mano NO detectada";
+    document.getElementById("mano-status").textContent = "🔴 Hand not detected!";
     puntero.style.display = "none";
     resetGrabbed();
   }

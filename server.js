@@ -33,7 +33,7 @@ app.use('/assets', express.static('assets'));
 // Ruta para servir el archivo HTML principal
 app.use(express.json());
 
-//
+
 app.get('/logs', (req, res) => {
     const logPath = path.join(__dirname, 'data/logs.txt');
 
@@ -55,7 +55,7 @@ app.get('/frase-aleatoria', (req, res) => {
     res.send(aleatoria);
 });
 
-// REGISTER endpoint
+// Registro endpoint
 app.post('/register', (req, res) => {
     const { username, password } = req.body;
 
